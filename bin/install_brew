@@ -1,0 +1,5 @@
+#!/bin/sh -e
+
+brew update
+brew doctor
+brew install vim tmux shellcheck
