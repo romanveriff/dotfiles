@@ -2,4 +2,5 @@
 
 brew update
 brew doctor
-brew install vim tmux shellcheck
+brew install tmux shellcheck
+brew install vim --with-luajit

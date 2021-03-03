@@ -23,8 +23,10 @@ pseudo_uuid() {
   done
 }
 
+alias 8='ping 8.8.8.8'
 alias uuid='pseudo_uuid | pbcopy && pbpaste && echo'
-# alias npm='npm -s'
+alias ng="npm list -g --depth=0 2>/dev/null"
+alias nl="npm list --depth=0 2>/dev/null"
 
 alias t='tmux a || tmux'
 alias l='ls -l'
@@ -139,19 +141,6 @@ export NVM_DIR="$HOME/.nvm"
 test -f '/usr/local/opt/nvm/nvm.sh' &&
 source '/usr/local/opt/nvm/nvm.sh'
 
-run_nvm_use() {
-  if test -f .nvmrc
-  then nvm use
-  fi
-}
-
-cd_and_run_nvm_use(){
-  cd "$1" && run_nvm_use
-}
-alias cd=cd_and_run_nvm_use
-
-run_nvm_use
-
 # shellcheck disable=SC1090
 # test -f "$HOME/.rvm/scripts/rvm" &&
 # source  "$HOME/.rvm/scripts/rvm"
@@ -181,3 +170,5 @@ alias dcps='docker-compose ps'
 alias dcdn='docker-compose down -v'
 alias dcup='docker-compose up -d'
 alias dcl='docker-compose logs -f'
+
+export PATH="$HOME/.tfenv/bin:$PATH"

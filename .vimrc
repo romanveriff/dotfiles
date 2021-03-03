@@ -64,22 +64,11 @@ Plug 'tpope/vim-unimpaired'
 "
 " COMPLETION
 
-Plug 'shougo/neocomplete.vim'
-
-  let g:neocomplete#sources#omni#input_patterns={}
-  let g:neocomplete#force_omni_input_patterns={}
-  let g:neocomplete#enable_auto_select=1
-  let g:neocomplete#enable_at_startup=1
-  let g:neocomplete#enable_smart_case=1
-
-  augroup NeoComplete
-    autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
-    autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-    autocmd! FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  augroup END
-
-  inoremap <expr><Tab> pumvisible() ? "\<C-y>" : "\<Tab>"
-  inoremap <expr><CR> neocomplete#smart_close_popup()."\<CR>"
+augroup Complete
+  autocmd! FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd! FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd! FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
@@ -136,12 +125,6 @@ Plug 'prettier/vim-prettier', {
   \ 'branch': 'release/1.x',
   \ 'for': [ 'javascript', 'typescript', 'css', 'json', 'markdown', 'yaml', 'html', 'graphql' ] }
   nnoremap <Leader>pp :Prettier<CR>
-  " let g:prettier#autoformat = 1
-  " augroup Prettier
-  "   autocmd!
-  "   autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.scss,*.json,*.graphql,*.md,*.yaml,*.html PrettierAsync
-  " augroup END
-
 
 let g:prettier#autoformat = 0
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.scss,*.json,*.graphql,*.md,*.yaml,*.html PrettierAsync
