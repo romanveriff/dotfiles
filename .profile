@@ -23,6 +23,7 @@ pseudo_uuid() {
   done
 }
 
+alias c='clear'
 alias 8='ping 8.8.8.8'
 alias uuid='pseudo_uuid | pbcopy && pbpaste && echo'
 alias ng="npm list -g --depth=0 2>/dev/null"
@@ -41,8 +42,6 @@ COLOR_RED="\033[0;31m"
 COLOR_YELLOW="\033[0;33m"
 COLOR_GREEN="\033[0;32m"
 COLOR_OCHRE="\033[38;5;95m"
-# COLOR_BLUE="\033[0;34m"
-# COLOR_WHITE="\033[0;37m"
 COLOR_RESET="\033[0m"
 
 function git_color {
@@ -122,7 +121,7 @@ function gpf {
 }
 
 
-PS1="\w\[\$(git_color)\]\$(git_branch_with_space)$COLOR_RESET "
+PS1="\w\[\$(git_color)\]\$(git_branch_with_space)\[$COLOR_RESET\] "
 export PS1
 
 export TERM='xterm-256color'
