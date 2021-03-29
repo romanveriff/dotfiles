@@ -23,6 +23,8 @@ pseudo_uuid() {
   done
 }
 
+alias i='npm i'
+alias t='npm t'
 alias c='clear'
 alias 8='ping 8.8.8.8'
 alias uuid='pseudo_uuid | pbcopy && pbpaste && echo'
@@ -90,8 +92,11 @@ alias gc='git commit'
 alias gco='git checkout'
 alias gcom='git checkout master'
 alias gd='git diff'
-alias gdh='git diff HEAD'
+alias gdh='git diff head'
+alias gdn='git diff --name-only'
 alias gf='git commit --amend --no-edit'
+alias ghp='gh pr create'
+alias ghv='gh pr view --web'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glsro='git ls-remote --heads origin'
 alias gpl='git pull --all'
@@ -99,8 +104,6 @@ alias gr='git rebase -i HEAD~20'
 alias grpo='git remote prune origin'
 alias grso='git remote show origin'
 alias gs='git status -s'
-alias ghv='gh repo view --web'
-alias ghrp='gh repo clone'
 
 function gbd {
   local current_branch
