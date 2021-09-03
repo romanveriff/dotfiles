@@ -141,50 +141,105 @@ Plug 'jparise/vim-graphql'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-markdown'
 let g:markdown_fenced_languages=['sh', 'vim', 'javascript', 'json', 'html', 'sass', 'css']
-set background=dark
 set cursorline
 set number
 set ruler
-
 syntax on
+syntax reset
 highlight clear
 
-highlight CursorColumn ctermfg=NONE    ctermbg=236  cterm=NONE
-highlight CursorLine   ctermfg=NONE    ctermbg=236  cterm=NONE
-highlight CursorLineNr ctermfg=7       ctermbg=236  cterm=NONE
-highlight DiffAdd      ctermfg=2       ctermbg=NONE cterm=NONE
-highlight DiffChange   ctermfg=2       ctermbg=NONE cterm=NONE
-highlight DiffDelete   ctermfg=1       ctermbg=NONE cterm=NONE
-highlight DiffText     ctermfg=2       ctermbg=236  cterm=NONE
-highlight FoldColumn   ctermfg=248     ctermbg=NONE cterm=italic
-highlight Folded       ctermfg=248     ctermbg=NONE cterm=italic
-highlight LineNr       ctermfg=238     ctermbg=NONE cterm=NONE
-highlight MatchParen   cterm=underline ctermbg=NONE cterm=NONE
-highlight NonText      ctermfg=236     ctermbg=NONE cterm=NONE
-highlight Normal       ctermfg=NONE    ctermbg=NONE cterm=NONE
-highlight Pmenu        ctermfg=15      ctermbg=236  cterm=NONE
-highlight PmenuSbar    ctermfg=7       ctermbg=NONE cterm=NONE
-highlight PmenuSel     ctermfg=236     ctermbg=2    cterm=NONE
-highlight PmenuThumb   ctermfg=7       ctermbg=NONE cterm=NONE
-highlight SignColumn   ctermfg=NONE    ctermbg=NONE cterm=NONE
-highlight SpellBad     ctermfg=NONE    ctermbg=NONE cterm=underline
-highlight SpellCap     ctermfg=NONE    ctermbg=NONE cterm=underline
-highlight Error        ctermfg=1       ctermbg=NONE cterm=underline
-highlight StatusLine   ctermfg=15      ctermbg=236  cterm=bold
-highlight StatusLineNC ctermfg=245     ctermbg=0    cterm=NONE
-highlight VertSplit    ctermfg=236     ctermbg=236  cterm=NONE
-highlight Visual       ctermfg=NONE    ctermbg=238  cterm=NONE
-highlight WildMenu     ctermfg=236     ctermbg=2    cterm=NONE
-highlight qfFileName   ctermfg=245     ctermbg=NONE cterm=italic
-highlight qfLineNr     ctermfg=238     ctermbg=NONE cterm=NONE
-highlight qfSeparator  ctermfg=0       ctermbg=NONE cterm=NONE
+set background=light
+" set background=dark
 
-highlight Comment        ctermfg=248 ctermbg=NONE cterm=NONE
-highlight String         ctermfg=10  ctermbg=NONE cterm=NONE
-highlight htmlH1         ctermfg=15  ctermbg=NONE cterm=bold
-highlight htmlItalic     ctermfg=7   ctermbg=NONE cterm=italic
-highlight htmlItalicBold ctermfg=15  ctermbg=NONE cterm=italic
-highlight htmlBoldItalic ctermfg=15  ctermbg=NONE cterm=bold
+if &background == "light"
+  highlight CursorColumn ctermbg=7
+  highlight LineNr       ctermfg=7
+  highlight CursorLineNr ctermfg=8
+  highlight Comment      ctermfg=8
+  highlight ColorColumn  ctermfg=8  ctermbg=7
+  highlight Folded       ctermfg=8  ctermbg=7
+  highlight FoldColumn   ctermfg=8  ctermbg=7
+  highlight Pmenu        ctermfg=0  ctermbg=7
+  highlight PmenuSel     ctermfg=7  ctermbg=0
+  highlight StatusLine   ctermfg=0  ctermbg=15   cterm=bold
+  highlight StatusLineNC ctermfg=7  ctermbg=NONE cterm=NONE
+  highlight VertSplit    ctermfg=15 ctermbg=NONE cterm=NONE
+else
+  highlight CursorColumn ctermbg=8
+  highlight LineNr       ctermfg=8
+  highlight CursorLineNr ctermfg=7
+  highlight Comment      ctermfg=8
+  highlight ColorColumn  ctermfg=7  ctermbg=8
+  highlight Folded       ctermfg=7  ctermbg=8
+  highlight FoldColumn   ctermfg=7  ctermbg=8
+  highlight Pmenu        ctermfg=15 ctermbg=8
+  highlight PmenuSel     ctermfg=8  ctermbg=15
+  highlight StatusLine   ctermfg=15 ctermbg=8    cterm=bold
+  highlight StatusLineNC ctermfg=8  ctermbg=0    cterm=NONE
+  highlight VertSplit    ctermfg=8  ctermbg=NONE cterm=NONE
+endif
+
+highlight SignColumn     ctermfg=NONE    ctermbg=NONE cterm=NONE
+highlight SpellCap       ctermfg=NONE    ctermbg=NONE cterm=underline
+highlight String         ctermfg=10      ctermbg=NONE cterm=NONE
+highlight htmlH1         ctermfg=15      ctermbg=NONE cterm=bold
+highlight htmlItalic     ctermfg=7       ctermbg=NONE cterm=italic
+highlight htmlItalicBold ctermfg=15      ctermbg=NONE cterm=italic
+highlight htmlBoldItalic ctermfg=15      ctermbg=NONE cterm=bold
+highlight SpecialKey     ctermfg=4
+highlight TermCursor     cterm=reverse
+highlight NonText        ctermfg=12
+highlight Directory      ctermfg=4
+highlight ErrorMsg       ctermfg=15      ctermbg=1
+highlight IncSearch      cterm=reverse
+highlight MoreMsg        ctermfg=2
+highlight ModeMsg        cterm=bold
+highlight Question       ctermfg=2
+highlight Title          ctermfg=5
+highlight WarningMsg     ctermfg=1
+highlight WildMenu       ctermfg=0       ctermbg=11
+highlight Conceal        ctermfg=7       ctermbg=7
+highlight SpellBad       cterm=underline ctermfg=NONE ctermbg=NONE
+highlight SpellRare      ctermbg=13
+highlight SpellLocal     ctermbg=14
+highlight PmenuSbar      ctermbg=8
+highlight PmenuThumb     ctermbg=0
+highlight TabLine        cterm=underline ctermfg=0    ctermbg=7
+highlight TabLineSel     cterm=bold
+highlight TabLineFill    cterm=reverse
+highlight CursorLine     cterm=underline
+highlight MatchParen     ctermbg=14
+highlight Constant       ctermfg=1
+highlight Special        ctermfg=5
+highlight Identifier     cterm=NONE      ctermfg=6
+highlight Statement      ctermfg=3
+highlight PreProc        ctermfg=5
+highlight Type           ctermfg=2
+highlight Underlined     cterm=underline ctermfg=5
+highlight Ignore         ctermfg=15
+highlight Error          ctermfg=15      ctermbg=9
+highlight Todo           ctermfg=0       ctermbg=11
+highlight Visual         ctermfg=NONE    ctermbg=NONE cterm=inverse
+highlight Search         ctermfg=0       ctermbg=11
+highlight DiffAdd        ctermfg=0       ctermbg=2
+highlight DiffChange     ctermfg=0       ctermbg=3
+highlight DiffDelete     ctermfg=0       ctermbg=1
+highlight DiffText       ctermfg=0       ctermbg=11   cterm=bold
+
+let g:fzf_colors =                                                                         
+  \ { 'fg':      ['fg', 'Normal'],                                                           
+    \ 'bg':      ['bg', 'Normal'],                                                           
+    \ 'hl':      ['fg', 'Comment'],                                                          
+    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],                             
+    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],                                       
+    \ 'hl+':     ['fg', 'Statement'],                                                        
+    \ 'info':    ['fg', 'PreProc'],                                                          
+    \ 'border':  ['fg', 'Ignore'],                                                           
+    \ 'prompt':  ['fg', 'Conditional'],                                                      
+    \ 'pointer': ['fg', 'Exception'],                                                        
+    \ 'marker':  ['fg', 'Keyword'],                                                          
+    \ 'spinner': ['fg', 'Label'],                                                            
+    \ 'header':  ['fg', 'Comment'] } 
 
 " function! HighlightItem()
 "   return synIDattr(synID(line('.'),col('.'),1),'name')

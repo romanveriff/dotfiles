@@ -94,8 +94,8 @@ alias gcom='git checkout master'
 alias gd='git diff'
 alias gdh='git diff head'
 alias gdn='git diff --name-only'
-alias gf='git commit --amend --no-edit'
-alias ghp='gh pr create'
+alias gf='git commit --amend --no-edit -n'
+alias ghp='gh pr create -f -d -a @me'
 alias ghv='gh pr view --web'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glsro='git ls-remote --heads origin'
@@ -139,9 +139,6 @@ PKG_CONFIG_PATH="/usr/local/opt/python@3.8/lib/pkgconfig"
 # PATH="$HOME/Library/Python/3.7/bin:$PATH"
 # PATH="$HOME/.rvm/bin:$PATH"
 export PATH LDFLAGS PKG_CONFIG_PATH
-export NVM_DIR="$HOME/.nvm"
-test -f '/usr/local/opt/nvm/nvm.sh' &&
-source '/usr/local/opt/nvm/nvm.sh'
 
 # shellcheck disable=SC1090
 # test -f "$HOME/.rvm/scripts/rvm" &&
@@ -174,3 +171,7 @@ alias dcup='docker-compose up -d'
 alias dcl='docker-compose logs -f'
 
 export PATH="$HOME/.tfenv/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+test -s "/usr/local/opt/nvm/nvm.sh" && . "/usr/local/opt/nvm/nvm.sh"
+test -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
