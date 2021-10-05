@@ -773,6 +773,12 @@
         "options": {
           "full_name": "tunnelblick"
         }
+      },
+      "docker": {
+        "version": "4.0.0,67817",
+        "options": {
+          "full_name": "docker"
+        }
       }
     }
   },

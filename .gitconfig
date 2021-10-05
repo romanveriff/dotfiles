@@ -10,3 +10,5 @@
 	required = true
 [core]
 	excludesfile = /Users/romanzolotarev/.gitignore
+[init]
+	defaultBranch = master

@@ -119,19 +119,20 @@ Plug 'ianks/vim-tsx', { 'for': ['tsx'] }
 Plug 'leafgarland/typescript-vim', { 'for': ['tsx', 'ts'] }
 
 " Linters
+Plug 'psf/black', { 'branch': 'stable' }
+  " autocmd BufWritePre *.py execute ':Black'
+  autocmd FileType python nnoremap <buffer> <Leader>pp :Black<CR>
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'branch': 'release/1.x',
   \ 'for': [ 'javascript', 'typescript', 'css', 'json', 'markdown', 'yaml', 'html', 'graphql' ] }
   nnoremap <Leader>pp :Prettier<CR>
-
-let g:prettier#autoformat = 0
+" let g:prettier#autoformat = 0
 " autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.scss,*.json,*.graphql,*.md,*.yaml,*.html PrettierAsync
 
-Plug 'w0rp/ale', {'for': ['sql', 'vim', 'bash', 'sh', 'javascript', 'typescript' ]}
+Plug 'w0rp/ale', {'for': ['sql', 'vim', 'bash', 'sh', 'javascript', 'typescript', 'python' ]}
   let g:ale_lint_on_text_changed='normal'
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
